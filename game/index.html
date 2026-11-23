@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Pact — a duel of cinders</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">EMBER PACT</div>
+    <div class="topinfo"><span id="turnLabel">Turn 1</span><span id="recordLabel">Wins 0 · Losses 0</span></div>
+  </header>
+
+  <section id="enemyZone" class="zone">
+    <div class="portrait enemy-portrait" title="Ash Warden">AW</div>
+    <div class="fighter">
+      <div class="fighter-name">ASH WARDEN <span class="tag">RIVAL</span></div>
+      <div class="bar hpbar"><div id="enemyHpFill" class="fill hp"></div><span id="enemyHpText" class="bartext">30 / 30</span></div>
+      <div class="bar manabar"><div id="enemyManaFill" class="fill mana"></div><span id="enemyManaText" class="bartext">3 / 3</span></div>
+      <div class="substats"><span id="enemyArmor">Armor 0</span><span id="enemyDeck">Deck 15</span></div>
+    </div>
+    <div id="enemyHand" class="hand enemy-hand"></div>
+  </section>
+
+  <section id="middleZone">
+    <div id="log" class="log"></div>
+    <div id="centerActions">
+      <button id="endTurnBtn" class="btn big">END TURN</button>
+      <button id="newGameBtn" class="btn">NEW GAME</button>
+    </div>
+  </section>
+
+  <section id="playerZone" class="zone">
+    <div class="portrait player-portrait" title="You">YOU</div>
+    <div class="fighter">
+      <div class="fighter-name">YOU <span class="tag you">EMBERBOUND</span></div>
+      <div class="bar hpbar"><div id="playerHpFill" class="fill hp"></div><span id="playerHpText" class="bartext">30 / 30</span></div>
+      <div class="bar manabar"><div id="playerManaFill" class="fill mana"></div><span id="playerManaText" class="bartext">3 / 3</span></div>
+      <div class="substats"><span id="playerArmor">Armor 0</span><span id="playerDeck">Deck 15</span><span id="playerDiscard">Discard 0</span></div>
+    </div>
+    <div id="playerHand" class="hand player-hand"></div>
+  </section>
+
+  <div id="titleScreen" class="overlay">
+    <div class="title-card">
+      <div class="title-kicker">A DUEL OF CINDERS</div>
+      <h1>EMBER PACT</h1>
+      <p class="title-sub">Outplay the Ash Warden. Spend mana, play cards, break through armor — first to zero health loses.</p>
+      <ul class="title-rules">
+        <li><b>1–5</b> play a card &nbsp;·&nbsp; <b>Space</b> end turn &nbsp;·&nbsp; <b>N</b> new game</li>
+        <li>Mana grows every turn, up to 10. Draw a card each turn.</li>
+        <li>Armor soaks damage first. Burn ticks at the start of your turn.</li>
+      </ul>
+      <button id="startBtn" class="btn big gold">BEGIN THE DUEL</button>
+      <div id="titleRecord" class="title-record"></div>
+    </div>
+  </div>
+
+  <div id="endScreen" class="overlay hidden">
+    <div class="title-card">
+      <div id="endKicker" class="title-kicker">VICTORY</div>
+      <h1 id="endTitle">THE WARDEN FALLS</h1>
+      <p id="endSub" class="title-sub"></p>
+      <div id="endStats" class="end-stats"></div>
+      <button id="againBtn" class="btn big gold">PLAY AGAIN</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
